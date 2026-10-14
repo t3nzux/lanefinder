@@ -7,6 +7,7 @@
 <meta property="og:title" content="Lanefinder Goggles">
 <meta property="og:description" content="Smart goggles for blind swimmers. Explore the 3D prototype, the haptic language and the swim simulator.">
 <meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>body{margin:0}</style>
 <title>Lanefinder Goggles</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -159,6 +160,14 @@ button{font:inherit;color:inherit}
   .hint{bottom:auto;top:64px}
   .selbar.show ~ .hint{display:none}
 }
+@media (max-width:560px){
+  .seg button{padding:7px 11px;white-space:nowrap}
+  .tools{flex-direction:column}
+  .hint{top:auto;bottom:16px;white-space:normal;text-align:center;width:calc(100% - 32px)}
+}
+.h-touch{display:none}
+@media (pointer:coarse){.h-mouse{display:none}.h-touch{display:inline}}
+.explore,.section,#panel{scroll-margin-top:64px}
 
 /* sections */
 .section{padding-block:clamp(84px,12vw,148px)}
@@ -314,7 +323,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 48px;font-size:12px;c
       </div>
     </div>
     <div class="selbar glass" id="selbar"><span class="dot" id="selDot"></span><span id="selName"></span><a href="#panel">Details</a></div>
-    <div class="hint" id="hint">Drag to rotate · Pinch or Ctrl/⌘ + scroll to zoom · Click any part</div>
+    <div class="hint" id="hint"><span class="h-mouse">Drag to rotate · Pinch or Ctrl/⌘ + scroll to zoom · Click any part</span><span class="h-touch">Drag to rotate · Pinch to zoom · Tap any part</span></div>
     <div class="tip" id="tip"></div>
   </div>
 
